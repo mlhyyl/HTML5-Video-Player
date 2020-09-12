@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a9437c4741.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Video Player</title>
+</head>
+<body>
+    <div class="container">
+        <div class="m-video">
+            <video src="video.mp4" class="video"></video>
+            <div class="controls">
+                <div id="custom-seekbar">
+                    <span></span>
+                </div>
+                <div class="playback">
+                    <button id="play-pause"></button>
+                </div>
+                <div class="speed">
+                    <button id="speed">
+                        <div id="speedList">
+                            <span>Speed</span>
+                            <hr>
+                            <ul>
+                                <li class="spdSet" onclick="setSpeed(0.5)">0.5</li>
+                                <li class="spdSet" onclick="setSpeed(1)">1</li>
+                                <li class="spdSet" onclick="setSpeed(1.5)">1.5</li>
+                                <li class="spdSet" onclick="setSpeed(2)">2</li>
+                            </ul>
+                        </div>
+                    </button>
+                </div>
+                <i class="fas fa-expand-arrows-alt" onclick="toggleFullscreen();"></i>
+                <span id="duration"></span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

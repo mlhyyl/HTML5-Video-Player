@@ -1,0 +1,156 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.video {
+    width: 100%;
+}
+.m-video {
+    width: 100%;
+    max-width: 640px;
+    position: absolute;
+    overflow: hidden;
+}
+body:fullscreen .m-video {
+    max-width: unset;
+}
+.m-video:hover .controls {
+    transform: translateY(0);
+}
+.controls {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,.7);
+    transform: translateY(100%) translateY(-3px);
+    transition: all .2s;
+}
+.playback, .speed, .fullscreen {
+    width: auto;
+    padding: 10px;
+    display: flex;
+}
+.playback button, .speed button, .fullscreen button {
+    background: none;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.playback button.play:before {
+    content: '\f144';
+}
+.playback button.pause:before {
+    content: '\f28b';
+}
+.speed button:before {
+    content: '\f185';
+}
+.speed button:before {
+    content: '\f185';
+}
+.fullscreen button:before {
+    content: '\f065';
+}
+.fullscreen button:before {
+    content: '\f065';
+}
+.playback button:before {
+    content: '\f144';
+    font-family: 'Font Awesome 5 Free'; 
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+.speed button:before {
+    content: '\f185';
+    font-family: 'Font Awesome 5 Free'; 
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+.fullscreen button:before {
+    content: '\f065';
+    font-family: 'Font Awesome 5 Free'; 
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    font-size: 28px;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+}
+#speed #speedList {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    background: rgba(0,0,0,.7);
+    color: white;
+    padding: 10px;
+}
+#speedList span {
+    text-align: center;
+}
+#speed #speedList ul li {
+    color: white;
+    padding: 5px;
+}
+.time-bar {
+    height: 3px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+}
+.time-progress {
+    height: 3px;
+    background-color: orangered;
+    width: 0;
+}
+input.seekbar {
+    background: transparent;
+}
+#duration {
+    color: white;
+    width: 100px;
+    font-size: 12px;
+    text-align: right;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 8px;
+}
+i.fas.fa-expand-arrows-alt {
+    color: white;
+}
+
+
+
+#custom-seekbar
+{  
+  cursor: pointer;
+  height: 10px;
+  margin-bottom: 10px;
+  border-bottom: thin solid orange;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+#custom-seekbar span
+{
+  background-color: orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10px;
+  width: 0px;
+}
+
+/* following rule is for hiding Stack Overflow's console  */
+.as-console-wrapper{ display: none !important;}
