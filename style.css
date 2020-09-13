@@ -184,3 +184,11 @@ i.fas.fa-expand-arrows-alt {
     background: #dedede;
     margin: 2px 0 2px 0;
 }
+
+.volume {
+    display: flex;
+    font-size: 27px;
+    padding: 12px;
+    color: white;
+    justify-content: space-between;
+}
