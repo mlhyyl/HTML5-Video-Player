@@ -130,9 +130,8 @@ function toggleFullscreen(event) {
 	document.cancelFullScreen = document.cancelFullScreen || document.webkitCancelFullScreen || document.mozCancelFullScreen || function () { return false; };
 
     isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
-    
+   
 };
-
 
 var contextMenu =  document.getElementById('contextMenu');
 window.onclick = hideContextMenu;
@@ -148,7 +147,7 @@ function hideContextMenu() {
 };
 
 function getUrl() {    
-    var text = window.location.href;
+    var text = location.protocol + '//' + location.host + location.pathname;
     navigator.clipboard.writeText(text).then(function() {
     console.log('Async: Copying to clipboard was successful!');
     }, function(err) {
@@ -157,7 +156,7 @@ function getUrl() {
 };
 
 function getUrlCurrentTime() {    
-    var text = window.location.href + "?t=" + parseInt(video.currentTime);
+    var text = location.protocol + '//' + location.host + location.pathname + "?t=" + parseInt(video.currentTime);
     navigator.clipboard.writeText(text).then(function() {
     console.log('Async: Copying to clipboard was successful!');
     }, function(err) {
@@ -173,3 +172,15 @@ const timeUrl = urlParams.get('t');
 window.addEventListener('load', function () {
   video.currentTime = timeUrl;
 });
+
+
+video.addEventListener("click", function(event) { 
+        if (video.paused == true) {
+             video.play();
+             btn.className = 'pause';
+        }
+        else{
+             video.pause();
+             btn.className = 'play';
+        }
+  });
