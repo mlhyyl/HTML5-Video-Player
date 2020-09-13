@@ -132,3 +132,44 @@ function toggleFullscreen(event) {
     isFullscreen ? document.cancelFullScreen() : element.requestFullScreen();
     
 };
+
+
+var contextMenu =  document.getElementById('contextMenu');
+window.onclick = hideContextMenu;
+
+function showContextMenu(event) {
+    contextMenu.style.display = 'block';
+    contextMenu.style.left = event.clientX + 'px';
+    contextMenu.style.top = event.clientY + 'px';
+    return false;
+};
+function hideContextMenu() {
+    contextMenu.style.display = 'none';
+};
+
+function getUrl() {    
+    var text = window.location.href;
+    navigator.clipboard.writeText(text).then(function() {
+    console.log('Async: Copying to clipboard was successful!');
+    }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+    });
+};
+
+function getUrlCurrentTime() {    
+    var text = window.location.href + "?t=" + parseInt(video.currentTime);
+    navigator.clipboard.writeText(text).then(function() {
+    console.log('Async: Copying to clipboard was successful!');
+    }, function(err) {
+    console.error('Async: Could not copy text: ', err);
+    });
+};
+
+const urlParams = new URLSearchParams(window.location.search);
+const timeUrl = urlParams.get('t');
+
+
+
+window.addEventListener('load', function () {
+  video.currentTime = timeUrl;
+});
