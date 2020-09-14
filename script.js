@@ -175,12 +175,20 @@ window.addEventListener('load', function () {
 
 
 video.addEventListener("click", function(event) { 
-        if (video.paused == true) {
-             video.play();
-             btn.className = 'pause';
-        }
-        else{
-             video.pause();
-             btn.className = 'play';
-        }
-  });
+	if (video.paused == true) {
+	     video.play();
+	     btn.className = 'pause';
+	}
+	else{
+	     video.pause();
+	     btn.className = 'play';
+	}
+});
+
+var volumeValue = document.querySelector('#volume-bar');
+
+volumeValue.addEventListener("click", changeVolume);
+
+function changeVolume() {
+    video.volume = volumeValue.value / 100;
+}
